@@ -65,7 +65,6 @@
     $sql = "SELECT MaHoaDon, TenKhachHang, SoDienThoai, hoadon.TongGiaTri, hoadon.NgayBan, hoadon.trangthai
     FROM hoadon
     LEFT JOIN khachhang ON hoadon.MaKhachHang = khachhang.MaKhachHang
-    WHERE hoadon.trangthai NOT IN ('Đã huỷ', 'Đã giao hàng')
     ORDER BY MaHoaDon DESC;
     ";
     $query = mysqli_query($conn, $sql);
@@ -74,10 +73,8 @@
         <div class="card">
             <div class="card-header">
                 <h2>Danh sách đơn hàng</h2>
-                <button class="edit-btn successs">Đơn hàng đã thanh toán</button>
+                <button class="edit-btn successs">Đơn hàng</button>
             </div>
-            <button class="edit-btn successs" data-id="<?php echo $row['MaHoaDon']; ?>"
-                                                    onclick="eidtduyetProduct(<?php echo $row['MaHoaDon']; ?>)">Duyệt đơn hàng</button>
             <div class="card-body">
                 <table id="productTable" class="table">
                     <thead class="thead-dark">
@@ -88,8 +85,6 @@
                             <th>TỔNG TIỀN</th>
                             <th>NGÀY BÁN</th>
                             <th>TRẠNG THÁI</th>
-                            <th>XỬ LÝ ĐƠN</th>
-                            <th></th>
                             <th>Setting</th>
                         </tr>
                     </thead>
@@ -115,44 +110,6 @@
                                 </td>
                                 <td>
                                     <?php echo $row['trangthai']; ?>
-                                </td>
-
-                                <td>
-                                    <?php
-                                    include "../../connect/config_oop.php";
-                                    $sqll = "SELECT * FROM hoadon";
-                                    $queryy = mysqli_query($conn, $sqll);
-                                    if ($rowk = mysqli_fetch_assoc($queryy)) {
-                                        $trangthai = $row['trangthai'];
-                                        if ($trangthai == 'Đang giao hàng') {
-                                            ?>
-                                            <button class="edit-btn success" data-id="<?php echo $row['MaHoaDon']; ?>"
-                                                onclick="eidtProduct(<?php echo $row['MaHoaDon']; ?>)">Xác nhận thanh toán</button>
-                                            <?php
-                                        } else if ($trangthai == 'Đang chờ duyệt') {
-                                            ?>
-                                                <button class="edit-btn successs" data-id="<?php echo $row['MaHoaDon']; ?>"
-                                                    onclick="eidtduyetProduct(<?php echo $row['MaHoaDon']; ?>)">Duyệt đơn hàng</button>
-                                                <?php
-                                        }
-                                    }
-                                    ?>
-                                </td>
-                                <td>
-                                    <?php
-                                    include "../../connect/config_oop.php";
-                                    $sqllhuy = "SELECT * FROM hoadon";
-                                    $queryyhuy = mysqli_query($conn, $sqllhuy);
-                                    if ($rowk = mysqli_fetch_assoc($queryy)) {
-                                        $trangthai = $row['trangthai'];
-                                        if ($trangthai == 'Đang giao hàng') {
-                                            ?>
-                                            <button class="delete-btn" data-id="<?php echo $row['MaHoaDon']; ?>"
-                                                onclick="huydon(<?php echo $row['MaHoaDon']; ?>)">Huỷ đơn</button>
-                                            <?php
-                                        }
-                                    }
-                                    ?>
                                 </td>
                                 <td>
                                     <?php include '../../view/modal/modal_cthd.php' ?>
