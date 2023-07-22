@@ -267,7 +267,11 @@
         <?php
         include "content.php";
         ?>
+        <?php
+        include "comment.php";
+        ?>
     </content>
+
     <?php
     include "footer.php";
     ?>

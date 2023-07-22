@@ -139,7 +139,7 @@ include "../../connect/config_oop.php";
                         <hr>
                         <div class="settings-links">
                             <i class='bx bx-log-in icon'></i>
-                            <a href="http://localhost/DOANPHPMYSQL_2023/admin/account/logout.php">Logout<i
+                            <a href="http://localhost/DOANPHPMYSQL_2023/admin/account/logout.php">Sign Out <i
                                     class='bx bxs-chevron-right'></i></a>
                         </div>
                     </div>
@@ -149,11 +149,10 @@ include "../../connect/config_oop.php";
 
             <div style="padding:  22px 32px;">
                 <div class="text">
-                    <?php include '../inc/view/list_nhasanxuat.php' ?>
+                    <?php include '../inc/view/list_phanhoi.php' ?>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 
 </body>

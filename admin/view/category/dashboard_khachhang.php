@@ -67,7 +67,7 @@ include "../../connect/config_oop.php";
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="http://localhost/DOANPHPMYSQL_2023/admin/view/category/dashboard_phanhoi.php">
                         <span class="icon"><i class='bx bx-message'></i></span>
                         <span class="title">Phản hồi</span>
                     </a>

@@ -431,7 +431,7 @@
         <div class="row row-cols-1 row-cols-md-5 g-4">
             <?php
             include "../connect/config_oop.php";
-            $sql = "SELECT SanPham.MaSanPham, SanPham.TenSanPham, SanPham.GiaBan, SanPham.AnhSanPham, SUM(ChiTietHoaDon.SoLuongBan) AS TongSoLuongBan
+            $sql = "SELECT SanPham.MaSanPham, SanPham.TenSanPham,SanPham.Kichthuoc, SanPham.GiaBan, SanPham.AnhSanPham, SUM(ChiTietHoaDon.SoLuongBan) AS TongSoLuongBan
                                             FROM SanPham
                                             JOIN ChiTietHoaDon ON SanPham.MaSanPham = ChiTietHoaDon.MaSanPham
                                             GROUP BY SanPham.MaSanPham, SanPham.TenSanPham, SanPham.GiaBan, SanPham.AnhSanPham

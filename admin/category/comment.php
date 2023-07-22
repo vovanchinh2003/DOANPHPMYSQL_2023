@@ -1,32 +1,21 @@
-<?php
-session_start();
-if (!isset($_SESSION['username'])) {
-    // Redirect to the login page
-    header("Location: http://localhost/DO_AN_PHP_MYSQL_2023/login/login.php");
-    exit;
-}
-// include "../../../connect/config_oop.php";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../css/navar.css">
     <title>Điện thoại | Smartphone chính hãng, giá rẻ, trợ giá lên đời</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body>
-    
+
     <div style="padding: 60px 140px;" class="container-fluid ">
         <div class="container">
             <?php
             $productId = $_GET['productId']; // Lấy tableId từ tham số truy vấn trong URL
-            include "../../connect/config_oop.php";
+            include "../connect/config_oop.php";
             $sql = "SELECT * FROM sanpham where MaSanPham = '$productId '";
             $result = mysqli_query($conn, $sql);
             if (mysqli_num_rows($result) > 0) {
@@ -36,38 +25,6 @@ if (!isset($_SESSION['username'])) {
                     $GiaBan = $row["GiaBan"];
                     $MoTaSanPham = $row["MoTaSanPham"];
                     ?>
-                    <div class="row">
-                        <div class="col-6">
-                            <h1 class="fs">
-                                <?php echo $TenSanPham ?>
-                            </h1>
-                        </div>
-                        <div class="col-6">
-
-                        </div>
-                    </div>
-                    <div class="f"></div>
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="product-img">
-                                <img style="width: 100%; height: 100%;"
-                                    src="data:image/jpeg;base64,<?php echo base64_encode($AnhSanPham); ?>"
-                                    alt="<?php echo $TenSanPham; ?>">
-                            </div>
-                        </div>
-                        <div class="boi"></div>
-                        <div class="col-6">
-                            <div style="font-size: 32px; font-weight: 500;color:  red; line-height: 40px;" class="p">
-                                <?php echo $GiaBan ?>đ
-                            </div>
-                            <p style="margin-top: 10px;">
-                                <?php echo $MoTaSanPham ?>
-                            </p>
-                            <input
-                                style="background: red;color: white; width: 100%; font-weight: 500; font-size: 20px; line-height:20px;padding: 10px 32px;"
-                                type="submit" value="MUA NGAY">
-                        </div>
-                    </div>
                     <div class="comment" style="margin-top: 50px; background: #dfd9d9; width: 100%; height: 100%">
                         <div class="section" style="padding: 20px 40px;">
                             <h1 class="fs">
@@ -82,7 +39,8 @@ if (!isset($_SESSION['username'])) {
                                 if (isset($_SESSION['username'], $_SESSION['user_id'])) {
                                     $id = $_SESSION['user_id'];
                                     ?>
-                                    <form id="comment-form" action="binhluan.php" method="POST">
+                                    <form id="comment-form" action="http://localhost/DOANPHPMYSQL_2023/admin/core/xulyadd_binhluan.php"
+                                        method="POST">
                                         <input type="hidden" name="maSanPham" value="<?php echo $productId; ?>">
                                         <input type="hidden" name="tenkhachhang" value="<?php echo $id; ?>">
                                         <div class="flex-input" style="display: flex;">

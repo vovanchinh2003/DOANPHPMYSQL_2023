@@ -1,6 +1,6 @@
 <?php
 // Assuming you have established a MySQL database connection
-include "../../../connect/config_oop.php";
+include "../connect/config_oop.php";
 
 // Retrieve form data
 $maSanPham = $_POST['maSanPham'];

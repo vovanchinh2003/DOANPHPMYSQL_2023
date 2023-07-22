@@ -72,8 +72,17 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-header">
-                <h2>Danh sách đơn hàng</h2>
-                <button class="edit-btn successs">Đơn hàng</button>
+                <div class="row">
+                    <div class="col-6">
+                        <h2>Danh sách đơn hàng đã thanh toán</h2>
+                    </div>
+                    <div class="col-4"></div>
+                    <div class="col-2">
+                        <br>
+                        <a href="http://localhost/DOANPHPMYSQL_2023/admin/view/category/dashboard_donhang.php"
+                            class="edit-btn successs" style="text-decoration: none;">Trở về</a>
+                    </div>
+                </div>
             </div>
             <div class="card-body">
                 <table id="productTable" class="table">

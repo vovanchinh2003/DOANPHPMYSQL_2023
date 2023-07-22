@@ -73,11 +73,18 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-header">
-                <h2>Danh sách đơn hàng</h2>
-                <button class="edit-btn successs">Đơn hàng đã thanh toán</button>
+                <div class="row">
+                    <div class="col-7">
+                        <h2>Danh sách đơn hàng chưa thanh toán</h2>
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-3">
+                        <br>
+                        <a href="http://localhost/DOANPHPMYSQL_2023/admin/view/category/dashboard_donhangdathanhtoan.php"
+                            class="edit-btn success" style="text-decoration: none;">Xem đơn hàng đã thanh toán</a>
+                    </div>
+                </div>
             </div>
-            <button class="edit-btn successs" data-id="<?php echo $row['MaHoaDon']; ?>"
-                                                    onclick="eidtduyetProduct(<?php echo $row['MaHoaDon']; ?>)">Duyệt đơn hàng</button>
             <div class="card-body">
                 <table id="productTable" class="table">
                     <thead class="thead-dark">

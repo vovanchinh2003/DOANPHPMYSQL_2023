@@ -6,7 +6,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="http://localhost/DOANPHPMYSQL_2023/core/xulyadd_sanpham.php" method="POST"
+                <form action="http://localhost/DOANPHPMYSQL_2023/admincore/xulyadd_sanpham.php" method="POST"
                     enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-6">

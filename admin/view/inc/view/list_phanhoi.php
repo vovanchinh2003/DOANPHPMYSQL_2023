@@ -127,7 +127,7 @@
                                 </div>
                                 <div class="modal-body">
                                     <form method="POST"
-                                        action="http://localhost/DO_AN_PHP_MYSQL_2023/admin/view/nic/xulytraloi.php">
+                                        action="http://localhost/DOANPHPMYSQL_2023/admincore/xulyadd_traloi.php">
                                         <input type="hidden" name="maBinhLuan" value="<?php echo $rowComment['MaBinhLuan']; ?>">
                                         <textarea class="form-control" name="noiDungTraLoi"
                                             placeholder="Nhập nội dung trả lời"></textarea>
